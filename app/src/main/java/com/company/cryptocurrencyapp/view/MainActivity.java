@@ -66,34 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleResponse));
 
-       /* Call<List<CryptoModel>> call = cryptoAPI.getData();
 
-        call.enqueue(new Callback<List<CryptoModel>>() {
-            @Override
-            public void onResponse(Call<List<CryptoModel>> call, Response<List<CryptoModel>> response) {
-
-                if (response.isSuccessful()){
-
-                    List<CryptoModel> responseList = response.body();
-                    cryptoModels = new ArrayList<>(responseList);
-
-                    recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                    recyclerViewAdapter = new RecyclerViewAdapter(cryptoModels);
-                    recyclerView.setAdapter(recyclerViewAdapter);
-                  /*  for (CryptoModel cryptoModel : cryptoModels){
-                        System.out.println(cryptoModel.currency);
-                    }
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<CryptoModel>> call, Throwable t) {
-
-                t.printStackTrace();
-            }
-        });*/
     }
 
     private void handleResponse(List<CryptoModel> cryptoModelList){
